@@ -447,8 +447,12 @@
                     </dl>
                 </div>
 
-                <form class="rounded-lg border border-brand-200 bg-white p-8 shadow-sm" action="#" method="post">
-                    @csrf
+                <form
+                    id="contact-form"
+                    class="rounded-lg border border-brand-200 bg-white p-8 shadow-sm"
+                    novalidate
+                    aria-describedby="contact-form-notice"
+                >
                     <div class="grid gap-5 sm:grid-cols-2">
                         <div class="sm:col-span-1">
                             <label for="name" class="type-label block text-brand-950">Name</label>
@@ -480,7 +484,8 @@
                     <button type="submit" class="type-btn mt-6 w-full rounded-lg bg-brand-950 px-6 py-4 text-white transition hover:bg-black sm:w-auto sm:px-10">
                         Send enquiry
                     </button>
-                    <p class="type-caption mt-4 text-brand-500">Preview only — form submission is not connected on this concept site.</p>
+                    <p id="contact-form-notice" class="type-caption mt-4 text-brand-500">Preview only — this form does not send emails or save enquiries.</p>
+                    <p id="contact-form-status" class="type-body-sm mt-3 hidden rounded-lg border border-brand-200 bg-brand-50 px-4 py-3 text-brand-700" role="status" aria-live="polite" tabindex="-1"></p>
                 </form>
             </div>
         </div>

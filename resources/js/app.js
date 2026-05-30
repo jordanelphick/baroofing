@@ -100,4 +100,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.fonts?.ready) {
         document.fonts.ready.then(updateLayoutOffsets);
     }
+
+    const contactForm = document.getElementById('contact-form');
+    const contactFormStatus = document.getElementById('contact-form-status');
+
+    contactForm?.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        if (contactFormStatus) {
+            contactFormStatus.textContent =
+                'This is a concept preview only — your enquiry was not sent. Call the number listed above, or contact Elphick Digital to make this site live.';
+            contactFormStatus.classList.remove('hidden');
+        }
+
+        contactFormStatus?.focus();
+    });
 });
